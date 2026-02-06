@@ -72,6 +72,16 @@ pipeline {
                 '''
             }
         }
+        stage('Security Scan') {
+            steps {
+                registerSecurityScan(
+                    // Security Scan to include
+                    artifacts: "$SARIF_OUTPUT",
+                    format: "sarif",
+                    archive: true
+                )
+            }
+        }
 
         stage('Publish SARIF to Dashboard') {
             steps {
