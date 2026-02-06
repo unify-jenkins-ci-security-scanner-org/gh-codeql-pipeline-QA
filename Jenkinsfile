@@ -14,9 +14,9 @@ pipeline {
         PATH = "${env.WORKSPACE}/go/bin:${env.PATH}"
     }
 
-    triggers {
-        cron '50 20 * * 1-5' // Runs at 20:50 on Monday to Friday
-         }
+    // triggers {
+    //     cron '50 20 * * 1-5' // Runs at 20:50 on Monday to Friday
+    //      }
 
     stages {
         stage('Install Go') {
